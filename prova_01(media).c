@@ -1,36 +1,41 @@
-# PCA
+/*Faça um programa que leia as notas finais de vários alunos de uma turma e mostre a maior
+nota, a menor nota e a média aritmética simples das notas da turma. O programa pára
+quando encontrar uma nota negativa. sem break*/
+
 #include <stdio.h>
 
 int main(){
 
-    float media, aritmetica, maior, menor;
-    int soma=0, cont=0;
+    float nota, media, maior, menor,soma=0;
+    int cont=0;
 
-    while(media > 0){
-        printf("Informe a media dos alunos: ");
-        scanf("%f", &media);
-        cont = cont + 1;
-        soma = soma + media;
+    do{
+        printf("Input the notes: ");
+        scanf("%f", &nota);
+        if(nota >= 0){
+            cont += 1;
+            soma += nota;
 
-        if(media < 0){
-            aritmetica = soma / cont;
-            break;
-        }
-        if(cont == 1){
-            maior = media;
-            menor = media;
-        }
-        else{
-            if(media > maior){
-                maior = media;
+            if(cont == 1){
+                maior = nota;
+                menor = nota;
             }
             else{
-                if(media < menor && media > 0){
-                    menor = media;
+                if(nota > maior){
+                    maior = nota;
+                }
+                else{
+                    if(nota < menor && nota > 0){
+                        menor = nota;
+                    }
                 }
             }
-        }
-    }
-    printf("\n A maior media eh %.1f e a menor eh %.1f",maior, menor);
-    printf("\n A media aritmetica das medias eh: %.1f", aritmetica);
+        }    
+            media = soma / cont;
+    } while (nota > 0);
+    
+    printf("The biggest note is [%.1f] and the smallest is [%.1f]\n",maior, menor);
+    printf("The average of class is [%.1f]", media);
+    return 0;
 }
+
