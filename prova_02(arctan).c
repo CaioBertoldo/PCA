@@ -1,4 +1,3 @@
-# PCA
 /*Faça um programa em C com três funções:
 - Função para solicitar do usuário um número real positivo no range [0,1].
 - Função arctan que recebe o número real x [0,1] e devolve uma aproximação do arco
@@ -42,12 +41,7 @@ float arctan(float n){
             arct += (pow(n,cont)/cont);
         }
     }
-    rad = (arct*3.14159)/180;
-    return rad;
-}
-
-void imprime_radianos(float n, float rad){
-    printf("The number [%.2f] in radians is [%f]",n,rad);
+    printf("The arctan of the number [%.2f] is [%f]", n, arct);
 }
 
 int main(){
@@ -55,5 +49,4 @@ int main(){
 
     s = real_positivo();
     arc = arctan(s);
-    imprime_radianos(s, arc);
 }
