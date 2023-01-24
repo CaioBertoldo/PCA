@@ -1,13 +1,13 @@
-# PCA
 /*Criar e utilizar num programa uma função que receba uma sequência de n números e a imprima na ordem inversa.
  (o comprimento máximo da sequência é 100 pelo que n tem que ser um número menor que 100)*/
 
 #include <stdio.h>
 #include <stdlib.h>
+#define n 100
 
 int ordem_inversa(){
 
-    int vetor[5];
+    int vetor[n];
     int i;
 
     for(i = 0; i < 5; i++){
